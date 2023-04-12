@@ -41,6 +41,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: web
@@ -51,7 +52,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ra1z3nbr/kube-news:v1
+          image: ra1z3nbr/kube-news:v2
           ports:
           - containerPort: 8080
           env:
