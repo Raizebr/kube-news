@@ -6,11 +6,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerapp = docker.build("raizebr/kube-news:${env.BUILD_ID}", '--file ./src/dockerfile ./src')
+                    dockerapp = docker.build("raizebr/kube-news:${env.BUILD_ID}", "--file ./src/dockerfile ./src")
 
                 }
             }
         }
+        
+        
+        
         
         stage('Push Docker image') {
            steps {
