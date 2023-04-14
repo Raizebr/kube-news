@@ -19,7 +19,7 @@ pipeline {
            steps {
             script {
                 
-                withDockerRegistry ([ credentialsId: "dockerhub", "ttps://registry.hub.docker.com"])
+                withDockerRegistry ([ credentialsId: "dockerhub", "https://registry.hub.docker.com"])
                 //docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') 
                 {
                 dockerapp.push('latest')
